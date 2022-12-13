@@ -43,20 +43,17 @@ void GildedRose::updateQuality()
 
         if (items[i].sellIn < 0)
         {
-            if (items[i].name != "Aged Brie")
+            if (items[i].name != "Aged Brie" && items[i].name != "Backstage passes to a TAFKAL80ETC concert" && items[i].quality > 0 && items[i].name != "Sulfuras, Hand of Ragnaros")
             {
-                if (items[i].name != "Backstage passes to a TAFKAL80ETC concert" && items[i].quality > 0 && items[i].name != "Sulfuras, Hand of Ragnaros")
-                {
-                    items[i].quality--;
-                }
-                else
-                {
-                    items[i].quality -= items[i].quality;
-                }
+                items[i].quality--;
             }
             else if (items[i].quality < 50)
             {
                 items[i].quality++;
+            }
+            else // not sure if it'll work tho ;O
+            {
+                items[i].quality -= items[i].quality;
             }
         }
     }
