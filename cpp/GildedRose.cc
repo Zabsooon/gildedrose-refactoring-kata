@@ -11,15 +11,9 @@ void GildedRose::updateQuality()
 {
     for (int i = 0; i < items.size(); i++)
     {
-        if (items[i].name != "Aged Brie" && items[i].name != "Backstage passes to a TAFKAL80ETC concert")
+        if (items[i].name != "Aged Brie" && items[i].name != "Backstage passes to a TAFKAL80ETC concert" && items[i].quality > 0 && items[i].name != "Sulfuras, Hand of Ragnaros")
         {
-            if (items[i].quality > 0)
-            {
-                if (items[i].name != "Sulfuras, Hand of Ragnaros")
-                {
-                    items[i].quality--;
-                }
-            }
+            items[i].quality--;
         }
         else
         {
@@ -29,20 +23,14 @@ void GildedRose::updateQuality()
 
                 if (items[i].name == "Backstage passes to a TAFKAL80ETC concert")
                 {
-                    if (items[i].sellIn < 11)
+                    if (items[i].sellIn < 11 && items[i].quality < 50)
                     {
-                        if (items[i].quality < 50)
-                        {
-                            items[i].quality++;
-                        }
+                        items[i].quality++;
                     }
 
-                    if (items[i].sellIn < 6)
+                    if (items[i].sellIn < 6 && items[i].quality < 50)
                     {
-                        if (items[i].quality < 50)
-                        {
-                            items[i].quality++;
-                        }
+                        items[i].quality++;
                     }
                 }
             }
@@ -57,15 +45,9 @@ void GildedRose::updateQuality()
         {
             if (items[i].name != "Aged Brie")
             {
-                if (items[i].name != "Backstage passes to a TAFKAL80ETC concert")
+                if (items[i].name != "Backstage passes to a TAFKAL80ETC concert" && items[i].quality > 0 && items[i].name != "Sulfuras, Hand of Ragnaros")
                 {
-                    if (items[i].quality > 0)
-                    {
-                        if (items[i].name != "Sulfuras, Hand of Ragnaros")
-                        {
-                            items[i].quality--;
-                        }
-                    }
+                    items[i].quality--;
                 }
                 else
                 {
